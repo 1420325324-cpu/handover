@@ -111,6 +111,11 @@
     letter-spacing: -.02em;
     color: var(--gold);
   }
+  .stats-divider {
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.35;
+  }
   .stat-lbl {
     font-family: var(--mono);
     font-size: 11px;
@@ -681,6 +686,7 @@
     padding: var(--sp-10) var(--sp-10);
     position: relative;
     z-index: 1;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
   .overview-head {
     font-family: var(--mono);
@@ -704,6 +710,11 @@
     text-align: center;
     padding: var(--sp-8) var(--sp-7);
     background: var(--grey-1);
+  }
+  .ov-kpi-unit {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0;
   }
   .ov-kpi-num {
     font-family: var(--sans);
@@ -735,8 +746,8 @@
   .overview-section-title {
     font-family: var(--sans);
     font-weight: 700;
-    font-size: 15px;
-    letter-spacing: .06em;
+    font-size: 17px;
+    letter-spacing: .04em;
     text-transform: uppercase;
     color: var(--ink);
     margin-bottom: var(--sp-7);
@@ -754,7 +765,12 @@
   .ov-pillar {
     padding: var(--sp-7);
     background: var(--grey-1);
+    border-left: 3px solid transparent;
   }
+  .ov-pillar:nth-child(1) { border-left-color: var(--green); }
+  .ov-pillar:nth-child(2) { border-left-color: var(--accent); }
+  .ov-pillar:nth-child(3) { border-left-color: var(--gold); }
+  .ov-pillar:nth-child(4) { border-left-color: #0891b2; }
   .ov-pillar-top {
     display: flex;
     align-items: baseline;
@@ -870,22 +886,8 @@
     font-weight: 600;
   }
 
-  @media (max-width: 900px) {
-    .overview { padding: var(--sp-7) var(--sp-6); margin-top: -24px; }
-    .overview-kpi-row { gap: var(--sp-4); }
-    .ov-kpi-num { font-size: 32px; }
-    .ov-kpi { padding: var(--sp-5); }
-  }
-  @media (max-width: 640px) {
-    .overview { padding: var(--sp-6) var(--sp-4); margin-top: -20px; }
-    .overview-kpi-row { grid-template-columns: 1fr; gap: var(--sp-3); }
-    .ov-kpi-num { font-size: 28px; }
-    .ov-pillar { padding: var(--sp-5); }
-    .ov-pillar-title { font-size: 16px; }
-    .ov-pillar-desc { font-size: 13px; }
-    .ov-focus { padding: var(--sp-5); }
-    .ov-focus-item, .ov-focus-text { font-size: 14px; }
-  }
+
+
   /* ── Mobile ── */
   @media (max-width: 900px) {
     .container { padding: 0 32px; }
@@ -901,6 +903,10 @@
     .referral-steps { flex-wrap: wrap; }
     .referral-arrow { transform: rotate(90deg); justify-content: center; padding: 8px 0; }
     .referral-rewards { grid-template-columns: repeat(3, 1fr); }
+    .overview { padding: var(--sp-7) var(--sp-6); }
+    .overview-kpi-row { gap: var(--sp-4); }
+    .ov-kpi-num { font-size: 32px; }
+    .ov-kpi { padding: var(--sp-5); }
   }
 
   @media (max-width: 640px) {
@@ -938,6 +944,15 @@
     .referral-rewards { grid-template-columns: 1fr 1fr; }
     .referral-timeline { padding-left: var(--sp-4); }
     .footer { padding: 24px 16px; font-size: 10px; }
+    .overview { padding: var(--sp-6) var(--sp-4); }
+    .overview-kpi-row { grid-template-columns: 1fr 1fr; gap: var(--sp-3); }
+    .overview-kpi-row .ov-kpi:last-child { grid-column: 1 / -1; max-width: 50%; margin: 0 auto; }
+    .ov-kpi-num { font-size: 28px; }
+    .ov-pillar { padding: var(--sp-5); }
+    .ov-pillar-title { font-size: 16px; }
+    .ov-pillar-desc { font-size: 13px; }
+    .ov-focus { padding: var(--sp-5); }
+    .ov-focus-item, .ov-focus-text { font-size: 14px; }
   }
 
   @media (max-width: 400px) {
@@ -976,6 +991,8 @@
   <div class="stat"><div class="stat-num">4</div><div class="stat-lbl">小店</div></div>
 </div>
 
+<div class="stats-divider"></div>
+
 <div class="container">
 
     <!-- Overview -->
@@ -985,17 +1002,17 @@
       <!-- 三列核心指标 -->
       <div class="overview-kpi-row">
         <div class="ov-kpi">
-          <div class="ov-kpi-num">759<span style="font-size:24px;font-weight:400;">万</span></div>
+          <div class="ov-kpi-num">759<span class="ov-kpi-unit">万</span></div>
           <div class="ov-kpi-label">2025 全年业绩</div>
           <div class="ov-kpi-detail">订单 9,159 单 · 支付人数 6,313 人</div>
         </div>
         <div class="ov-kpi">
-          <div class="ov-kpi-num">138<span style="font-size:24px;font-weight:400;">万</span></div>
+          <div class="ov-kpi-num">138<span class="ov-kpi-unit">万</span></div>
           <div class="ov-kpi-label">会员总数</div>
           <div class="ov-kpi-detail">2025 年招募 125,176 人 · 门店约 130 家</div>
         </div>
         <div class="ov-kpi">
-          <div class="ov-kpi-num">24<span style="font-size:24px;font-weight:400;">万</span></div>
+          <div class="ov-kpi-num">24<span class="ov-kpi-unit">万</span></div>
           <div class="ov-kpi-label">企微好友总数</div>
           <div class="ov-kpi-detail">月均新增约 6,000 人 · 覆盖 130 家门店</div>
         </div>
