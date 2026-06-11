@@ -691,7 +691,7 @@
     border-bottom: 1px solid var(--grey-2);
   }
 
-  /* KPI row — three columns, generous spacing */
+  /* KPI row */
   .overview-kpi-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -700,7 +700,7 @@
   }
   .ov-kpi {
     text-align: center;
-    padding: var(--sp-6) var(--sp-5);
+    padding: var(--sp-7) var(--sp-5);
     background: var(--grey-1);
   }
   .ov-kpi-num {
@@ -726,15 +726,15 @@
     font-family: var(--sans-zh);
     font-size: 13px;
     color: var(--grey-3);
-    margin-top: var(--sp-3);
+    margin-top: 6px;
   }
 
   /* Section divider */
   .overview-section-title {
     font-family: var(--sans);
     font-weight: 700;
-    font-size: 16px;
-    letter-spacing: .04em;
+    font-size: 15px;
+    letter-spacing: .06em;
     text-transform: uppercase;
     color: var(--ink);
     margin-bottom: var(--sp-7);
@@ -742,31 +742,29 @@
     border-bottom: 2px solid var(--ink);
   }
 
-  /* Pillars — full width vertical stack */
+  /* Pillars — full width vertical cards */
   .overview-pillars {
     display: flex;
     flex-direction: column;
-    gap: var(--sp-7);
+    gap: var(--sp-6);
     margin-bottom: var(--sp-10);
   }
   .ov-pillar {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: var(--sp-7);
     padding: var(--sp-7);
     background: var(--grey-1);
   }
-  .ov-pillar-left {
+  .ov-pillar-top {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    align-items: baseline;
+    gap: var(--sp-4);
+    margin-bottom: var(--sp-5);
   }
   .ov-pillar-icon {
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: .12em;
     color: var(--gold);
-    margin-bottom: var(--sp-3);
+    flex-shrink: 0;
   }
   .ov-pillar-title {
     font-family: var(--sans);
@@ -779,17 +777,17 @@
     font-family: var(--sans-zh);
     font-size: 14px;
     color: var(--ink);
-    line-height: 1.9;
+    line-height: 1.95;
   }
   .ov-pillar-desc strong {
     font-weight: 600;
   }
 
-  /* Focus — full width vertical stack */
+  /* Focus cards */
   .overview-focus-grid {
     display: flex;
     flex-direction: column;
-    gap: var(--sp-7);
+    gap: var(--sp-6);
     margin-bottom: var(--sp-10);
     padding-bottom: var(--sp-9);
     border-bottom: 1px solid var(--grey-2);
@@ -810,7 +808,7 @@
   .ov-focus-list {
     display: flex;
     flex-direction: column;
-    gap: var(--sp-5);
+    gap: var(--sp-4);
   }
   .ov-focus-item {
     font-family: var(--sans-zh);
@@ -819,7 +817,7 @@
     line-height: 1.7;
     display: flex;
     align-items: flex-start;
-    gap: var(--sp-5);
+    gap: var(--sp-4);
   }
   .ov-focus-num {
     font-family: var(--mono);
@@ -839,14 +837,13 @@
     font-weight: 600;
   }
 
-  /* Bottom bar — vertical stack */
+  /* Bottom */
   .overview-bottom {
     display: flex;
     flex-direction: column;
     gap: var(--sp-6);
   }
   .ov-bottom-item {
-    padding: 0;
   }
   .ov-bottom-label {
     font-family: var(--mono);
@@ -854,7 +851,7 @@
     letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--grey-3);
-    margin-bottom: var(--sp-4);
+    margin-bottom: var(--sp-3);
   }
   .ov-bottom-text {
     font-family: var(--sans-zh);
@@ -873,18 +870,16 @@
 
   @media (max-width: 900px) {
     .overview { padding: var(--sp-7) var(--sp-6); margin-top: -24px; }
-    .overview-kpi-row { grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); }
+    .overview-kpi-row { gap: var(--sp-4); }
     .ov-kpi-num { font-size: 32px; }
-    .ov-pillar { grid-template-columns: 1fr; gap: var(--sp-4); }
-    .ov-pillar-title { font-size: 16px; }
+    .ov-kpi { padding: var(--sp-5); }
   }
   @media (max-width: 640px) {
     .overview { padding: var(--sp-6) var(--sp-4); margin-top: -20px; }
-    .overview-kpi-row { grid-template-columns: 1fr; gap: var(--sp-4); }
-    .ov-kpi { padding: var(--sp-5); }
+    .overview-kpi-row { grid-template-columns: 1fr; gap: var(--sp-3); }
     .ov-kpi-num { font-size: 28px; }
     .ov-pillar { padding: var(--sp-5); }
-    .ov-pillar-title { font-size: 15px; }
+    .ov-pillar-title { font-size: 16px; }
     .ov-pillar-desc { font-size: 13px; }
     .ov-focus { padding: var(--sp-5); }
     .ov-focus-item, .ov-focus-text { font-size: 14px; }
@@ -1008,8 +1003,10 @@
       <div class="overview-section-title">新零售四大业务板块</div>
       <div class="overview-pillars">
         <div class="ov-pillar">
-          <div class="ov-pillar-icon">01</div>
-          <div class="ov-pillar-title">云店商城运营</div>
+          <div class="ov-pillar-top">
+            <div class="ov-pillar-icon">01</div>
+            <div class="ov-pillar-title">云店商城运营</div>
+          </div>
           <div class="ov-pillar-desc">
             以 EZR 商城系统为核心，覆盖<strong>门店线上云店</strong>、<strong>默认线上店</strong>、<strong>辖区内购店</strong>三类店铺形态。<br>
             日常工作包括：商品上下架与详情维护、月度活动配置（限时优惠/满减/满赠/砍价/优惠券）、首页与落地页画面调整、库存管理（OMS自动同步 + 手动补仓）。<br>
@@ -1017,8 +1014,10 @@
           </div>
         </div>
         <div class="ov-pillar">
-          <div class="ov-pillar-icon">02</div>
-          <div class="ov-pillar-title">会员运营</div>
+          <div class="ov-pillar-top">
+            <div class="ov-pillar-icon">02</div>
+            <div class="ov-pillar-title">会员运营</div>
+          </div>
           <div class="ov-pillar-desc">
             以 EZR 会员系统为底座，覆盖会员拉新、活跃、留存、推荐全生命周期。<br>
             核心触达手段：<strong>短信营销</strong>（含视频短信）、<strong>AI 外呼</strong>、<strong>企业微信 1v1</strong>。<br>
@@ -1028,8 +1027,10 @@
           </div>
         </div>
         <div class="ov-pillar">
-          <div class="ov-pillar-icon">03</div>
-          <div class="ov-pillar-title">新零售渠道</div>
+          <div class="ov-pillar-top">
+            <div class="ov-pillar-icon">03</div>
+            <div class="ov-pillar-title">新零售渠道</div>
+          </div>
           <div class="ov-pillar-desc">
             在云店商城之外拓展增量渠道：<br>
             <strong>微信小店</strong>：规则变化频繁，采取轻运营策略，维持商品同步和基础直播（视频号数字人 + 辖区直播优惠券），不投入过重资源。<br>
@@ -1038,8 +1039,10 @@
           </div>
         </div>
         <div class="ov-pillar">
-          <div class="ov-pillar-icon">04</div>
-          <div class="ov-pillar-title">IOT 共享按摩椅</div>
+          <div class="ov-pillar-top">
+            <div class="ov-pillar-icon">04</div>
+            <div class="ov-pillar-title">IOT 共享按摩椅</div>
+          </div>
           <div class="ov-pillar-desc">
             <strong>18 个点位 · 约 90 台</strong>，主要渠道：机场贵宾厅、4S店、酒店。<br>
             机场流量最大、优先级最高。目标是<strong>提高品牌曝光</strong>、增加业绩机会、增长会员体量。<br>
