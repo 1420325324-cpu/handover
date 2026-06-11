@@ -29,6 +29,8 @@
     --sp-7: 32px;
     --sp-8: 40px;
     --sp-9: 48px;
+    --sp-10: 56px;
+    --sp-11: 72px;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -672,11 +674,11 @@
 
   /* ── Overview ── */
   .overview {
-    margin-top: -32px;
-    margin-bottom: var(--sp-9);
+    margin-top: 0;
+    margin-bottom: var(--sp-11);
     background: var(--paper);
     border: 1px solid var(--grey-2);
-    padding: var(--sp-10) var(--sp-9);
+    padding: var(--sp-10) var(--sp-10);
     position: relative;
     z-index: 1;
   }
@@ -700,7 +702,7 @@
   }
   .ov-kpi {
     text-align: center;
-    padding: var(--sp-7) var(--sp-5);
+    padding: var(--sp-8) var(--sp-7);
     background: var(--grey-1);
   }
   .ov-kpi-num {
