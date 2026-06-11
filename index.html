@@ -801,6 +801,83 @@
     font-weight: 600;
   }
 
+
+  /* Membership & Points */
+  .overview-membership {
+    margin-bottom: var(--sp-10);
+  }
+  .ov-tier-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--grey-2);
+    margin-bottom: var(--sp-6);
+  }
+  .ov-tier {
+    background: var(--paper);
+    text-align: center;
+    padding: var(--sp-6) var(--sp-5);
+  }
+  .ov-tier-num {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    color: var(--ink);
+  }
+  .ov-tier-name {
+    font-family: var(--sans-zh);
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--ink);
+    margin-top: var(--sp-3);
+  }
+  .ov-tier-desc {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .08em;
+    color: var(--grey-3);
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+  .ov-points {
+    padding: var(--sp-6);
+    background: var(--grey-1);
+  }
+  .ov-points-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--grey-3);
+    margin-bottom: var(--sp-5);
+  }
+  .ov-points-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--sp-5);
+  }
+  .ov-points-item {
+  }
+  .ov-points-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .10em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: var(--sp-2);
+  }
+  .ov-points-text {
+    font-family: var(--sans-zh);
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  .ov-points-text strong {
+    font-weight: 600;
+  }
+
   /* Focus cards */
   .overview-focus-grid {
     display: flex;
@@ -907,6 +984,9 @@
     .overview-kpi-row { gap: var(--sp-4); }
     .ov-kpi-num { font-size: 32px; }
     .ov-kpi { padding: var(--sp-5); }
+    .ov-tier-grid { grid-template-columns: repeat(3, 1fr); }
+    .ov-points-grid { grid-template-columns: repeat(2, 1fr); }
+    .ov-tier-num { font-size: 24px; }
   }
 
   @media (max-width: 640px) {
@@ -953,6 +1033,10 @@
     .ov-pillar-desc { font-size: 13px; }
     .ov-focus { padding: var(--sp-5); }
     .ov-focus-item, .ov-focus-text { font-size: 14px; }
+    .ov-tier-grid { grid-template-columns: 1fr; }
+    .ov-points-grid { grid-template-columns: 1fr 1fr; }
+    .ov-tier-num { font-size: 22px; }
+    .ov-tier { padding: var(--sp-5); }
   }
 
   @media (max-width: 400px) {
@@ -1067,6 +1151,51 @@
             机场流量最大、优先级最高。目标是<strong>提高品牌曝光</strong>、增加业绩机会、增长会员体量。<br>
             <strong>IOT 月均招募人数已超过门店会员招募</strong>，成为会员增长第一渠道。<br>
             年度指标：<strong>25 台/辖区</strong>，持续 Push 各辖区推进新点位开发。
+          </div>
+        </div>
+      </div>
+
+      <!-- 会员分层与积分体系 -->
+      <div class="overview-section-title" style="margin-top:var(--sp-10);">会员分层与积分体系</div>
+
+      <div class="overview-membership">
+        <div class="ov-tier-grid">
+          <div class="ov-tier">
+            <div class="ov-tier-num">35.9万</div>
+            <div class="ov-tier-name">OSIM 会员尊享卡</div>
+            <div class="ov-tier-desc">未消费过的潜客</div>
+          </div>
+          <div class="ov-tier">
+            <div class="ov-tier-num">78.6万</div>
+            <div class="ov-tier-name">VIP 会员尊享卡</div>
+            <div class="ov-tier-desc">消费 ¥1 – ¥9,999</div>
+          </div>
+          <div class="ov-tier">
+            <div class="ov-tier-num">23.8万</div>
+            <div class="ov-tier-name">白金会员尊享卡</div>
+            <div class="ov-tier-desc">消费 ¥10,000 以上</div>
+          </div>
+        </div>
+
+        <div class="ov-points">
+          <div class="ov-points-title">积分规则</div>
+          <div class="ov-points-grid">
+            <div class="ov-points-item">
+              <div class="ov-points-label">获取</div>
+              <div class="ov-points-text">线下订单消费 <strong>¥1 = 1 积分</strong>；每日签到可获积分</div>
+            </div>
+            <div class="ov-points-item">
+              <div class="ov-points-label">价值</div>
+              <div class="ov-points-text"><strong>100 积分 = ¥1</strong></div>
+            </div>
+            <div class="ov-points-item">
+              <div class="ov-points-label">兑换</div>
+              <div class="ov-points-text">可兑优惠券 或 积分加钱购，积分加钱兑换<strong>上限 ¥50</strong></div>
+            </div>
+            <div class="ov-points-item">
+              <div class="ov-points-label">有效期</div>
+              <div class="ov-points-text"><strong>2 年</strong>，到期前一个月自动发送到期提醒短信</div>
+            </div>
           </div>
         </div>
       </div>
