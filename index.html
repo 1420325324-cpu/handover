@@ -670,6 +670,130 @@
   }
 
 
+  /* ── Overview ── */
+  .overview {
+    margin-top: -32px;
+    margin-bottom: var(--sp-8);
+    background: var(--paper);
+    border: 1px solid var(--grey-2);
+    padding: var(--sp-8) var(--sp-7);
+    position: relative;
+    z-index: 1;
+  }
+  .overview-head {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--grey-3);
+    margin-bottom: var(--sp-6);
+  }
+  .overview-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--sp-5);
+    margin-bottom: var(--sp-7);
+    padding-bottom: var(--sp-6);
+    border-bottom: 1px solid var(--grey-2);
+  }
+  .ov-metric {
+    text-align: center;
+  }
+  .ov-num {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    color: var(--ink);
+  }
+  .ov-num-gold {
+    color: var(--gold);
+  }
+  .ov-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .10em;
+    text-transform: uppercase;
+    color: var(--grey-3);
+    margin-top: var(--sp-3);
+  }
+  .ov-sub {
+    font-family: var(--sans-zh);
+    font-size: 13px;
+    color: var(--grey-3);
+    margin-top: 4px;
+  }
+  .overview-pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--sp-4);
+  }
+  .ov-pillar {
+    padding: var(--sp-5);
+    border-left: 2px solid var(--grey-2);
+    transition: border-color 0.2s;
+  }
+  .ov-pillar:hover {
+    border-left-color: var(--gold);
+  }
+  .ov-pillar-num {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .12em;
+    color: var(--gold);
+    margin-bottom: var(--sp-3);
+  }
+  .ov-pillar-title {
+    font-family: var(--sans-zh);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: var(--sp-2);
+  }
+  .ov-pillar-desc {
+    font-family: var(--sans-zh);
+    font-size: 13px;
+    color: var(--grey-3);
+    line-height: 1.6;
+  }
+  .overview-iot {
+    margin-top: var(--sp-6);
+    padding: var(--sp-5);
+    background: var(--grey-1);
+    border-left: 2px solid var(--accent);
+  }
+  .overview-iot-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .12em;
+    color: var(--accent);
+    margin-bottom: var(--sp-3);
+    text-transform: uppercase;
+  }
+  .overview-iot-body {
+    font-family: var(--sans-zh);
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  .overview-iot-body strong {
+    color: var(--ink);
+  }
+  @media (max-width: 900px) {
+    .overview-metrics { grid-template-columns: repeat(2, 1fr); gap: var(--sp-6); }
+    .overview-pillars { grid-template-columns: repeat(2, 1fr); }
+    .overview { padding: var(--sp-6) var(--sp-5); margin-top: -24px; }
+    .ov-num { font-size: 28px; }
+  }
+  @media (max-width: 640px) {
+    .overview-metrics { grid-template-columns: repeat(2, 1fr); gap: var(--sp-5); }
+    .overview-pillars { grid-template-columns: 1fr; }
+    .overview { padding: var(--sp-5) var(--sp-4); margin-top: -20px; }
+    .ov-num { font-size: 24px; }
+    .ov-pillar-title { font-size: 14px; }
+  }
+
   /* ── Mobile ── */
   @media (max-width: 900px) {
     .container { padding: 0 32px; }
@@ -762,7 +886,66 @@
 
 <div class="container">
 
-  <!-- Timeline -->
+    <!-- Overview -->
+    <div class="overview">
+      <div class="overview-head">概览与背景 · Overview</div>
+
+      <div class="overview-metrics">
+        <div class="ov-metric">
+          <div class="ov-num ov-num-gold">¥759万</div>
+          <div class="ov-label">2025全年业绩</div>
+          <div class="ov-sub">9,159单 · 6,313人</div>
+        </div>
+        <div class="ov-metric">
+          <div class="ov-num">138万</div>
+          <div class="ov-label">会员总数</div>
+          <div class="ov-sub">25年招募12.5万 · 130店</div>
+        </div>
+        <div class="ov-metric">
+          <div class="ov-num">24万</div>
+          <div class="ov-label">企微好友</div>
+          <div class="ov-sub">月均新增约6,000人</div>
+          <div style="font-family:var(--sans-zh);font-size:11px;color:var(--grey-3);margin-top:4px;line-height:1.5;">社群转向销售1v1 + 总部福利群</div>
+        </div>
+        <div class="ov-metric">
+          <div class="ov-num">90台</div>
+          <div class="ov-label">IOT共享椅</div>
+          <div class="ov-sub">18个点位 · 3个重点项目</div>
+        </div>
+      </div>
+
+      <div class="overview-pillars">
+        <div class="ov-pillar">
+          <div class="ov-pillar-num">01</div>
+          <div class="ov-pillar-title">云店商城运营</div>
+          <div class="ov-pillar-desc">门店线上云店、默认线上店、辖区内购店，覆盖全渠道线上成交</div>
+        </div>
+        <div class="ov-pillar">
+          <div class="ov-pillar-num">02</div>
+          <div class="ov-pillar-title">会员运营</div>
+          <div class="ov-pillar-desc">会员线上线下活动与触达，主要对接各区 A&P</div>
+        </div>
+        <div class="ov-pillar">
+          <div class="ov-pillar-num">03</div>
+          <div class="ov-pillar-title">新零售渠道</div>
+          <div class="ov-pillar-desc">微信小店轻运营 + 抖音本地生活，公域引流到店帮助上销</div>
+        </div>
+        <div class="ov-pillar">
+          <div class="ov-pillar-num">04</div>
+          <div class="ov-pillar-title">IOT 渠道</div>
+          <div class="ov-pillar-desc">共享按摩椅，机场/4S店/酒店，品牌曝光 + 会员增长双驱动</div>
+        </div>
+      </div>
+
+      <div class="overview-iot">
+        <div class="overview-iot-title">IOT 当前重点</div>
+        <div class="overview-iot-body">
+          ① <strong>上海机场续约谈判</strong> &nbsp; ② <strong>北京、上海机场更换新椅子</strong> &nbsp; ③ <strong>福州机场商务入驻</strong> &nbsp; ｜ &nbsp; IOT月均招募人数已超过门店会员招募
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
   <div class="timeline">
     <div class="timeline-head">月度节奏 · Monthly Rhythm</div>
     <div class="tl-row">
