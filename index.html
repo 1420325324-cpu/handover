@@ -671,12 +671,13 @@
 
 
   /* ── Overview ── */
+  /* ── Overview ── */
   .overview {
     margin-top: -32px;
     margin-bottom: var(--sp-8);
     background: var(--paper);
     border: 1px solid var(--grey-2);
-    padding: var(--sp-8) var(--sp-7);
+    padding: var(--sp-9) var(--sp-8);
     position: relative;
     z-index: 1;
   }
@@ -686,112 +687,194 @@
     letter-spacing: .14em;
     text-transform: uppercase;
     color: var(--grey-3);
-    margin-bottom: var(--sp-6);
-  }
-  .overview-metrics {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--sp-5);
     margin-bottom: var(--sp-7);
-    padding-bottom: var(--sp-6);
+    padding-bottom: var(--sp-5);
     border-bottom: 1px solid var(--grey-2);
   }
-  .ov-metric {
-    text-align: center;
+
+  /* KPI row */
+  .overview-kpi-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--grey-2);
+    margin-bottom: var(--sp-8);
   }
-  .ov-num {
+  .ov-kpi {
+    background: var(--paper);
+    text-align: center;
+    padding: var(--sp-7) var(--sp-5);
+  }
+  .ov-kpi-num {
     font-family: var(--sans);
     font-weight: 300;
-    font-size: 36px;
+    font-size: 42px;
     line-height: 1.1;
     letter-spacing: -.02em;
     color: var(--ink);
   }
-  .ov-num-gold {
-    color: var(--gold);
-  }
-  .ov-label {
+  .ov-kpi-label {
     font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: .10em;
+    font-size: 11px;
+    letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--grey-3);
     margin-top: var(--sp-3);
   }
-  .ov-sub {
+  .ov-kpi-detail {
     font-family: var(--sans-zh);
     font-size: 13px;
     color: var(--grey-3);
-    margin-top: 4px;
+    margin-top: 6px;
   }
+
+  /* Section title */
+  .overview-section-title {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: var(--sp-6);
+    padding-bottom: var(--sp-4);
+    border-bottom: 2px solid var(--ink);
+  }
+
+  /* Pillars */
   .overview-pillars {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--sp-4);
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-5);
+    margin-bottom: var(--sp-7);
   }
   .ov-pillar {
-    padding: var(--sp-5);
-    border-left: 2px solid var(--grey-2);
-    transition: border-color 0.2s;
+    padding: var(--sp-6);
+    background: var(--grey-1);
   }
-  .ov-pillar:hover {
-    border-left-color: var(--gold);
-  }
-  .ov-pillar-num {
+  .ov-pillar-icon {
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: .12em;
     color: var(--gold);
     margin-bottom: var(--sp-3);
   }
   .ov-pillar-title {
-    font-family: var(--sans-zh);
+    font-family: var(--sans);
     font-weight: 700;
-    font-size: 15px;
+    font-size: 16px;
     color: var(--ink);
-    margin-bottom: var(--sp-2);
+    margin-bottom: var(--sp-4);
+    letter-spacing: -.01em;
   }
   .ov-pillar-desc {
     font-family: var(--sans-zh);
-    font-size: 13px;
-    color: var(--grey-3);
-    line-height: 1.6;
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.85;
   }
-  .overview-iot {
-    margin-top: var(--sp-6);
-    padding: var(--sp-5);
-    background: var(--grey-1);
-    border-left: 2px solid var(--accent);
+  .ov-pillar-desc strong {
+    font-weight: 600;
+    color: var(--ink);
   }
-  .overview-iot-title {
+
+  /* Focus grid (IOT + 企微) */
+  .overview-focus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-5);
+    margin-bottom: var(--sp-7);
+    padding-bottom: var(--sp-7);
+    border-bottom: 1px solid var(--grey-2);
+  }
+  .ov-focus {
+    padding: var(--sp-6);
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .ov-focus-title {
     font-family: var(--mono);
     font-size: 10px;
     letter-spacing: .12em;
-    color: var(--accent);
-    margin-bottom: var(--sp-3);
     text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: var(--sp-5);
   }
-  .overview-iot-body {
+  .ov-focus-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-4);
+  }
+  .ov-focus-item {
+    font-family: var(--sans-zh);
+    font-size: 14px;
+    color: var(--paper);
+    line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sp-4);
+  }
+  .ov-focus-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--gold);
+    min-width: 20px;
+    flex-shrink: 0;
+  }
+  .ov-focus-text {
+    font-family: var(--sans-zh);
+    font-size: 14px;
+    color: var(--paper);
+    line-height: 1.85;
+  }
+  .ov-focus-text strong {
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* Bottom bar */
+  .overview-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-6);
+  }
+  .ov-bottom-item {
+    padding: 0;
+  }
+  .ov-bottom-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--grey-3);
+    margin-bottom: var(--sp-3);
+  }
+  .ov-bottom-text {
     font-family: var(--sans-zh);
     font-size: 13px;
     color: var(--ink);
-    line-height: 1.7;
+    line-height: 1.8;
   }
-  .overview-iot-body strong {
-    color: var(--ink);
+  .ov-bottom-text strong {
+    font-weight: 600;
   }
+
   @media (max-width: 900px) {
-    .overview-metrics { grid-template-columns: repeat(2, 1fr); gap: var(--sp-6); }
-    .overview-pillars { grid-template-columns: repeat(2, 1fr); }
+    .overview-kpi-row { grid-template-columns: repeat(3, 1fr); }
+    .ov-kpi-num { font-size: 30px; }
+    .overview-pillars { grid-template-columns: 1fr; }
+    .overview-focus-grid { grid-template-columns: 1fr; }
+    .overview-bottom { grid-template-columns: 1fr; }
     .overview { padding: var(--sp-6) var(--sp-5); margin-top: -24px; }
-    .ov-num { font-size: 28px; }
   }
   @media (max-width: 640px) {
-    .overview-metrics { grid-template-columns: repeat(2, 1fr); gap: var(--sp-5); }
-    .overview-pillars { grid-template-columns: 1fr; }
+    .overview-kpi-row { grid-template-columns: 1fr; }
+    .ov-kpi { padding: var(--sp-5) var(--sp-4); }
+    .ov-kpi-num { font-size: 28px; }
     .overview { padding: var(--sp-5) var(--sp-4); margin-top: -20px; }
-    .ov-num { font-size: 24px; }
-    .ov-pillar-title { font-size: 14px; }
+    .ov-pillar { padding: var(--sp-5); }
+    .ov-pillar-title { font-size: 15px; }
+    .ov-pillar-desc { font-size: 13px; }
   }
 
   /* ── Mobile ── */
@@ -888,59 +971,108 @@
 
     <!-- Overview -->
     <div class="overview">
-      <div class="overview-head">概览与背景 · Overview</div>
+      <div class="overview-head">概览与背景 · Executive Summary</div>
 
-      <div class="overview-metrics">
-        <div class="ov-metric">
-          <div class="ov-num ov-num-gold">¥759万</div>
-          <div class="ov-label">2025全年业绩</div>
-          <div class="ov-sub">9,159单 · 6,313人</div>
+      <!-- 三列核心指标 -->
+      <div class="overview-kpi-row">
+        <div class="ov-kpi">
+          <div class="ov-kpi-num">¥7,593,144</div>
+          <div class="ov-kpi-label">2025 全年业绩</div>
+          <div class="ov-kpi-detail">订单 9,159 单 · 支付人数 6,313 人</div>
         </div>
-        <div class="ov-metric">
-          <div class="ov-num">138万</div>
-          <div class="ov-label">会员总数</div>
-          <div class="ov-sub">25年招募12.5万 · 130店</div>
+        <div class="ov-kpi">
+          <div class="ov-kpi-num">1,383,124</div>
+          <div class="ov-kpi-label">会员总数</div>
+          <div class="ov-kpi-detail">2025 年招募 125,176 人 · 门店约 130 家</div>
         </div>
-        <div class="ov-metric">
-          <div class="ov-num">24万</div>
-          <div class="ov-label">企微好友</div>
-          <div class="ov-sub">月均新增约6,000人</div>
-          <div style="font-family:var(--sans-zh);font-size:11px;color:var(--grey-3);margin-top:4px;line-height:1.5;">社群转向销售1v1 + 总部福利群</div>
-        </div>
-        <div class="ov-metric">
-          <div class="ov-num">90台</div>
-          <div class="ov-label">IOT共享椅</div>
-          <div class="ov-sub">18个点位 · 3个重点项目</div>
+        <div class="ov-kpi">
+          <div class="ov-kpi-num">239,566</div>
+          <div class="ov-kpi-label">企微好友总数</div>
+          <div class="ov-kpi-detail">月均新增约 6,000 人 · 覆盖 130 家门店</div>
         </div>
       </div>
 
+      <!-- 业务四板块 -->
+      <div class="overview-section-title">新零售四大业务板块</div>
       <div class="overview-pillars">
         <div class="ov-pillar">
-          <div class="ov-pillar-num">01</div>
+          <div class="ov-pillar-icon">01</div>
           <div class="ov-pillar-title">云店商城运营</div>
-          <div class="ov-pillar-desc">门店线上云店、默认线上店、辖区内购店，覆盖全渠道线上成交</div>
+          <div class="ov-pillar-desc">
+            以 EZR 商城系统为核心，覆盖<strong>门店线上云店</strong>、<strong>默认线上店</strong>、<strong>辖区内购店</strong>三类店铺形态。<br>
+            日常工作包括：商品上下架与详情维护、月度活动配置（限时优惠/满减/满赠/砍价/优惠券）、首页与落地页画面调整、库存管理（OMS自动同步 + 手动补仓）。<br>
+            渠道延伸至<strong>微信小店</strong>，通过小店商品通同步商品，配合视频号数字人直播（一知智能）和辖区直播优惠券，拓展公域触达。
+          </div>
         </div>
         <div class="ov-pillar">
-          <div class="ov-pillar-num">02</div>
+          <div class="ov-pillar-icon">02</div>
           <div class="ov-pillar-title">会员运营</div>
-          <div class="ov-pillar-desc">会员线上线下活动与触达，主要对接各区 A&P</div>
+          <div class="ov-pillar-desc">
+            以 EZR 会员系统为底座，覆盖会员拉新、活跃、留存、推荐全生命周期。<br>
+            核心触达手段：<strong>短信营销</strong>（含视频短信）、<strong>AI 外呼</strong>、<strong>企业微信 1v1</strong>。<br>
+            月度固定动作：生日会员画面设计（Iris）、生日短信+视频短信配置（VIP/白金会员需配优惠券，深圳辖区因无礼品需排除）、新会员三个月延保添加（赵国权）。<br>
+            主要对接人：<strong>各区 A&P</strong>，按辖区需求配置短信人群分组与优惠券。<br>
+            社群策略调整：<strong>逐步取消门店群运营</strong>，资源集中于销售 1v1 服务和总部综合福利群，用于互动与忠诚用户维护。
+          </div>
         </div>
         <div class="ov-pillar">
-          <div class="ov-pillar-num">03</div>
+          <div class="ov-pillar-icon">03</div>
           <div class="ov-pillar-title">新零售渠道</div>
-          <div class="ov-pillar-desc">微信小店轻运营 + 抖音本地生活，公域引流到店帮助上销</div>
+          <div class="ov-pillar-desc">
+            在云店商城之外拓展增量渠道：<br>
+            <strong>微信小店</strong>：规则变化频繁，采取轻运营策略，维持商品同步和基础直播（视频号数字人 + 辖区直播优惠券），不投入过重资源。<br>
+            <strong>抖音本地生活</strong>：机会较多，值得深入研究精进。通过直播销售小件或虚拟商品，引流到店帮助上销，实现公域 → 门店的导流闭环。<br>
+            客服接待：售后引导至售后热线，判断需求后可留资提供给辖区跟进。
+          </div>
         </div>
         <div class="ov-pillar">
-          <div class="ov-pillar-num">04</div>
-          <div class="ov-pillar-title">IOT 渠道</div>
-          <div class="ov-pillar-desc">共享按摩椅，机场/4S店/酒店，品牌曝光 + 会员增长双驱动</div>
+          <div class="ov-pillar-icon">04</div>
+          <div class="ov-pillar-title">IOT 共享按摩椅</div>
+          <div class="ov-pillar-desc">
+            <strong>18 个点位 · 约 90 台</strong>，主要渠道：机场贵宾厅、4S店、酒店。<br>
+            机场流量最大、优先级最高。目标是<strong>提高品牌曝光</strong>、增加业绩机会、增长会员体量。<br>
+            <strong>IOT 月均招募人数已超过门店会员招募</strong>，成为会员增长第一渠道。<br>
+            年度指标：<strong>25 台/辖区</strong>，持续 Push 各辖区推进新点位开发。
+          </div>
         </div>
       </div>
 
-      <div class="overview-iot">
-        <div class="overview-iot-title">IOT 当前重点</div>
-        <div class="overview-iot-body">
-          ① <strong>上海机场续约谈判</strong> &nbsp; ② <strong>北京、上海机场更换新椅子</strong> &nbsp; ③ <strong>福州机场商务入驻</strong> &nbsp; ｜ &nbsp; IOT月均招募人数已超过门店会员招募
+      <!-- IOT 当前重点 + 企微 + 供应商 -->
+      <div class="overview-focus-grid">
+        <div class="ov-focus">
+          <div class="ov-focus-title">IOT 当前三项重点工作</div>
+          <div class="ov-focus-list">
+            <div class="ov-focus-item"><span class="ov-focus-num">1</span> 上海机场续约谈判</div>
+            <div class="ov-focus-item"><span class="ov-focus-num">2</span> 北京机场、上海机场更换新椅子（流量大，按摩椅需更换）</div>
+            <div class="ov-focus-item"><span class="ov-focus-num">3</span> 福州机场商务入驻（预备 4 台，深圳走商务流程 → 进场 → 调拨）</div>
+          </div>
+        </div>
+        <div class="ov-focus">
+          <div class="ov-focus-title">企微社群策略</div>
+          <div class="ov-focus-text">
+            当前企微好友 <strong>239,566 人</strong>，月均新增约 6,000 人。<br>
+            运营重心调整：<strong>逐步取消门店群</strong>，将资源集中于<strong>销售 1v1 服务</strong>和<strong>总部综合福利群</strong>，通过精细化运营做互动与忠诚用户维护。
+          </div>
+        </div>
+      </div>
+
+      <!-- 供应商 + 推荐有礼 -->
+      <div class="overview-bottom">
+        <div class="ov-bottom-item">
+          <div class="ov-bottom-label">供应商</div>
+          <div class="ov-bottom-text">
+            <strong>峻汇</strong>（代运营：月报/数据/画面输出，月度服务费 + ROI 审核） ·
+            <strong>EZR</strong>（会员与商城 SaaS） ·
+            <strong>星云有客</strong>（UGC 内容与电商订单转换） ·
+            <strong>一知智能</strong>（数字人直播）
+          </div>
+        </div>
+        <div class="ov-bottom-item">
+          <div class="ov-bottom-label">重点项目</div>
+          <div class="ov-bottom-text">
+            <strong>推荐有礼「荐」者「友」赏</strong>：老客推荐计划升级，双向激励 + 阶梯奖励 + 三触点闭环。SG 已验证（2.5 个月 149 推荐，月均产出提升 30×），目前与 Des 提案中。
+            <a href="osim-referral-plan.html" style="color:var(--accent);">查看完整方案 →</a>
+          </div>
         </div>
       </div>
     </div>
