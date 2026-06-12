@@ -932,6 +932,65 @@
     font-weight: 600;
   }
 
+
+  /* Risks summary */
+  .overview-risks {
+    margin-top: var(--sp-10);
+    padding: var(--sp-7);
+    border: 1px solid rgba(220,38,38,0.15);
+    background: rgba(220,38,38,0.02);
+  }
+  .overview-risks-title {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: .04em;
+    color: #dc2626;
+    margin-bottom: var(--sp-6);
+  }
+  .overview-risks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-5);
+  }
+  .ov-risk {
+  }
+  .ov-risk-cat {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--grey-3);
+    margin-bottom: var(--sp-3);
+    padding-bottom: var(--sp-3);
+    border-bottom: 1px solid var(--grey-2);
+  }
+  .ov-risk-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-3);
+  }
+  .ov-risk-item {
+    font-family: var(--sans-zh);
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.7;
+    padding-left: 12px;
+    position: relative;
+  }
+  .ov-risk-item::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #dc2626;
+    font-weight: 700;
+  }
+  .ov-risk-item strong {
+    font-weight: 600;
+    color: #dc2626;
+  }
+
   /* Bottom */
   .overview-bottom {
     display: flex;
@@ -1033,6 +1092,7 @@
     .ov-pillar-desc { font-size: 13px; }
     .ov-focus { padding: var(--sp-5); }
     .ov-focus-item, .ov-focus-text { font-size: 14px; }
+    .overview-risks-grid { grid-template-columns: 1fr; }
     .ov-tier-grid { grid-template-columns: 1fr; }
     .ov-points-grid { grid-template-columns: 1fr 1fr; }
     .ov-tier-num { font-size: 22px; }
@@ -1236,6 +1296,49 @@
           <div class="ov-bottom-text">
             <strong>推荐有礼「荐」者「友」赏</strong>：老客推荐计划升级，双向激励 + 阶梯奖励 + 三触点闭环。SG 已验证（2.5 个月 149 推荐，月均产出提升 30×），目前与 Des 提案中。
             <a href="osim-referral-plan.html" style="color:var(--accent);">查看完整方案 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事项汇总 -->
+      <div class="overview-risks">
+        <div class="overview-risks-title">⚠ 注意事项与踩雷汇总</div>
+        <div class="overview-risks-grid">
+          <div class="ov-risk">
+            <div class="ov-risk-cat">短信</div>
+            <div class="ov-risk-list">
+              <div class="ov-risk-item">短信导出前需<strong>先选"其他"再切回"主动营销"</strong>刷新，否则数据不全</div>
+              <div class="ov-risk-item">导出行数超过<strong> 10 万条需拆分两个 sheet</strong>，否则 ERP 导入不全</div>
+              <div class="ov-risk-item"><strong>视频短信提审不要过早</strong>，审核需 2-3 天且有效期仅 30 天</div>
+              <div class="ov-risk-item">VIP/白金视频短信<strong>务必排除深圳辖区</strong>（无礼品，漏排即事故）</div>
+            </div>
+          </div>
+          <div class="ov-risk">
+            <div class="ov-risk-cat">EZR 操作</div>
+            <div class="ov-risk-list">
+              <div class="ov-risk-item"><strong>仓库验收后</strong>方可退款，未验收订单无法操作退款</div>
+              <div class="ov-risk-item">新店开业 <strong>6 步必须按顺序执行</strong>，不可跳步</div>
+              <div class="ov-risk-item"><strong>闭店后</strong>该门店分组和会员招募等数据统计会缺失</div>
+              <div class="ov-risk-item">新商品上架后<strong>必须更新 QEI 表并邮件赵国权</strong></div>
+            </div>
+          </div>
+          <div class="ov-risk">
+            <div class="ov-risk-cat">IOT / 小店</div>
+            <div class="ov-risk-list">
+              <div class="ov-risk-item">年度指标<strong> 25 台/辖区</strong>，需持续 Push 各辖区推进</div>
+              <div class="ov-risk-item"><strong>持续关注各点位到期日</strong>，提前准备续约，避免过期</div>
+              <div class="ov-risk-item">小店商品上下架需从<strong> EZR 后台同步</strong>（小店 → 小店商品通 → 商品同步）</div>
+              <div class="ov-risk-item">微信小店<strong>规则变化频繁</strong>，轻运营为主，不投入过重资源</div>
+            </div>
+          </div>
+          <div class="ov-risk">
+            <div class="ov-risk-cat">会议 / 流程</div>
+            <div class="ov-risk-list">
+              <div class="ov-risk-item">新零售月会如有变动，<strong>提前请 Linda 调整时间</strong>并重新创建腾讯会议</div>
+              <div class="ov-risk-item">峻汇付款 OA 需<strong>附 ROI 表现</strong>，审批后打印 OA+发票给沈晶</div>
+              <div class="ov-risk-item">短彩信续费需<strong>提前预判</strong>，让 Miko 准备合同走审批</div>
+              <div class="ov-risk-item">敏感谢内容已脱敏，如需完整信息见内部文档</div>
+            </div>
           </div>
         </div>
       </div>
